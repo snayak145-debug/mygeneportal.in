@@ -109,7 +109,7 @@ export const Contact = () => {
               </div>
               <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>WhatsApp</h3>
               <a
-                href="https://wa.me/919876543210?text=Hi, I have a question about genetic testing"
+                href="https://wa.me/919742337892?text=Hi, I have a question about genetic testing"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#25D366', textDecoration: 'none', fontWeight: '600' }}
