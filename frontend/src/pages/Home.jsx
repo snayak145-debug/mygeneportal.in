@@ -45,7 +45,7 @@ export const Home = () => {
               <ArrowRight size={20} />
             </Link>
             <a
-              href="https://wa.me/919876543210?text=Hi, I'm interested in genetic testing services"
+              href="https://wa.me/919742337892?text=Hi, I'm interested in genetic testing services"
               className="btn-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
