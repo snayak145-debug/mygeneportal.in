@@ -176,7 +176,7 @@ export const Home = () => {
                   Learn About Our Services
                 </Link>
                 <a
-                  href="https://wa.me/919876543210?text=I need pre-test counseling"
+                  href="https://wa.me/919742337892?text=I need pre-test counseling"
                   className="btn-whatsapp"
                   target="_blank"
                   rel="noopener noreferrer"
