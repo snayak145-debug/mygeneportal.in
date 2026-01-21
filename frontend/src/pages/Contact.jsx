@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../components/ui/accordion';
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import { faqs, partnerLabs } from '../mockData';
 import { useToast } from '../hooks/use-toast';
 import '../styles/genomics.css';
