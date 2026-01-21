@@ -138,7 +138,7 @@ export const TestCatalog = () => {
                 No tests found matching your search criteria. Try adjusting your filters or contact us for specific test inquiries.
               </p>
               <a
-                href="https://wa.me/919876543210?text=I'm looking for a specific genetic test"
+                href="https://wa.me/919742337892?text=I'm looking for a specific genetic test"
                 className="btn-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
