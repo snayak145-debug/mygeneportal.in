@@ -62,27 +62,6 @@ export const Contact = () => {
             }}>
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
                 <div style={{ background: 'var(--light-cyan)', padding: '1rem', borderRadius: '50%' }}>
-                  <Phone size={28} color="var(--primary-teal)" />
-                </div>
-              </div>
-              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Phone</h3>
-              <a href="tel:+919876543210" style={{ color: 'var(--primary-teal)', textDecoration: 'none', fontWeight: '600' }}>
-                +91 98765 43210
-              </a>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                Mon-Sat: 9 AM - 6 PM IST
-              </p>
-            </div>
-
-            <div style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '1rem',
-              border: '1px solid var(--border-color)',
-              textAlign: 'center'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-                <div style={{ background: 'var(--light-cyan)', padding: '1rem', borderRadius: '50%' }}>
                   <Mail size={28} color="var(--primary-teal)" />
                 </div>
               </div>
