@@ -48,10 +48,10 @@ export const Home = () => {
             <span>Trusted by 1000+ Patients | NABL Accredited Labs</span>
           </div>
           <h1 className="heading-hero hero-title">
-            Expert Genomic Testing with Pre-Test Counseling
+            Know Yourself. Transform Your Health.
           </h1>
           <p className="body-large hero-subtitle">
-            Get comprehensive genetic testing across India with expert guidance from Certified Board Genetic Counsellors. We partner with accredited labs to deliver accurate results with personalized counseling.
+            At MyGenePortal, we help you understand yourself better through reliable, DNA-based insights for comprehensive health and wellness. Our easy-to-use at-home DNA tests provide personalized insights tailored just for you, analyzed in secure NABL-accredited labs with certified genetic counselor support.
           </p>
           <div className="hero-cta">
             <Link to="/booking" className="btn-primary" onClick={scrollToTop}>
