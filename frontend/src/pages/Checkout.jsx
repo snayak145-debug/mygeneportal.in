@@ -137,6 +137,23 @@ export const Checkout = () => {
 
                     <div>
                       <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: 'var(--text-primary)' }}>
+                        Mobile Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="mobile"
+                        required
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        placeholder="+91 98765 43210"
+                        pattern="[0-9]{10}"
+                        className="search-input"
+                        style={{ width: '100%' }}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', color: 'var(--text-primary)' }}>
                         Address *
                       </label>
                       <textarea
