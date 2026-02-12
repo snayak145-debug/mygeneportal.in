@@ -1,19 +1,35 @@
-/* MyGenePortal - Medical Genomics Theme */
+/* MyGenePortal - Professional Genomics Theme (MapMyGenome Inspired) */
 
 :root {
-  /* Medical Trust Color Palette */
-  --primary-blue: #0A4D68;
-  --primary-teal: #088395;
-  --accent-cyan: #05BFDB;
-  --light-cyan: #E0F4F7;
+  /* Primary Color Palette - Professional Blues & Teals */
+  --primary-blue: #1B4D89;        /* Deep professional blue */
+  --primary-teal: #0891A6;        /* Vibrant teal accent */
+  --accent-green: #10B981;        /* Success/wellness green */
+  --light-blue: #E8F4F8;          /* Light blue backgrounds */
+  --soft-teal: #D1F2F6;           /* Soft teal highlights */
+  
+  /* Neutral Colors */
   --bg-white: #FFFFFF;
   --bg-light: #F8FAFB;
-  --text-primary: #1A2332;
-  --text-secondary: #4A5568;
-  --text-muted: #718096;
-  --border-color: #E2E8F0;
+  --bg-gray: #F3F4F6;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --border-color: #E5E7EB;
+  
+  /* Accent Colors */
   --success-green: #10B981;
   --warning-orange: #F59E0B;
+  --error-red: #EF4444;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+}
   
   /* Spacing */
   --space-xs: 0.5rem;
