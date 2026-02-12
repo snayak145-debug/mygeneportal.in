@@ -34,6 +34,12 @@ export const Home = () => {
 
   return (
     <div>
+      <EnquiryModal 
+        isOpen={enquiryModalOpen} 
+        onClose={() => setEnquiryModalOpen(false)}
+        testName={selectedTest}
+      />
+      
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
