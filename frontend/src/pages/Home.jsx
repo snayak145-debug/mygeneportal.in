@@ -12,6 +12,8 @@ export const Home = () => {
   const latestBlogs = blogPosts.slice(0, 3);
   const { addToCart } = useCart();
   const { toast } = useToast();
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [selectedTest, setSelectedTest] = useState('');
 
   const handleAddToCart = (test) => {
     addToCart(test);
@@ -19,6 +21,11 @@ export const Home = () => {
       title: "Added to Cart!",
       description: `${test.name} has been added to your cart.`,
     });
+  };
+
+  const handleEnquireClick = (testName = '') => {
+    setSelectedTest(testName);
+    setEnquiryModalOpen(true);
   };
 
   const scrollToTop = () => {
