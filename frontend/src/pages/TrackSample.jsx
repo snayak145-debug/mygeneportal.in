@@ -120,10 +120,16 @@ export const TrackSample = () => {
               </div>
               <button
                 type="submit"
+                disabled={loading}
                 className="btn-primary"
-                style={{ padding: '0 2rem' }}
+                style={{ padding: '0 2rem', opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
               >
-                Track
+                {loading ? (
+                  <>
+                    <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} />
+                    Tracking...
+                  </>
+                ) : 'Track'}
               </button>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.75rem' }}>
