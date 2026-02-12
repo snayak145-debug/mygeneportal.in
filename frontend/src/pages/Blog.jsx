@@ -1,9 +1,61 @@
-import React from 'react';
-import { Calendar, Clock } from 'lucide-react';
-import { blogPosts } from '../mockData';
+import React, { useState, useEffect } from 'react';
+import { Calendar, Clock, Loader2 } from 'lucide-react';
+import { blogAPI } from '../services/api';
+import { useToast } from '../hooks/use-toast';
 import '../styles/genomics.css';
 
 export const Blog = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        const posts = await blogAPI.getAll();
+        setBlogPosts(posts);
+      } catch (error) {
+        console.error('Error fetching blog posts:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load blog posts. Please refresh the page.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchBlogs();
+  }, [toast]);
+
+  if (loading) {
+    return (
+      <div style={{ paddingTop: '80px', minHeight: '100vh', background: 'var(--bg-light)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <Loader2 size={48} style={{ animation: 'spin 1s linear infinite', color: 'var(--primary-teal)' }} />
+          <p style={{ marginTop: '1rem', color: 'var(--text-secondary)' }}>Loading articles...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (blogPosts.length === 0) {
+    return (
+      <div style={{ paddingTop: '80px', minHeight: '100vh', background: 'var(--bg-light)' }}>
+        <section className="section">
+          <div className="container" style={{ textAlign: 'center' }}>
+            <h1 className="heading-1" style={{ marginBottom: '1rem' }}>Blog & Resources</h1>
+            <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
+              No blog posts available at the moment. Check back soon!
+            </p>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div style={{ paddingTop: '80px', minHeight: '100vh', background: 'var(--bg-light)' }}>
       <section className="section">
@@ -43,7 +95,7 @@ export const Blog = () => {
                   <span>•</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     <Clock size={16} />
-                    {blogPosts[0].readTime}
+                    {blogPosts[0].read_time}
                   </span>
                 </div>
                 <p className="body-large" style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
