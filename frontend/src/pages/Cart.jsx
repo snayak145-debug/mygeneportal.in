@@ -233,18 +233,27 @@ export const Cart = () => {
                     />
                     <button
                       onClick={handleApplyCoupon}
+                      disabled={verifyingCoupon}
                       style={{
-                        background: 'var(--primary-teal)',
+                        background: verifyingCoupon ? 'var(--text-muted)' : 'var(--primary-teal)',
                         color: 'white',
                         border: 'none',
                         borderRadius: '0.5rem',
                         padding: '0 1.5rem',
-                        cursor: 'pointer',
+                        cursor: verifyingCoupon ? 'not-allowed' : 'pointer',
                         fontSize: '0.875rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
                       }}
                     >
-                      Apply
+                      {verifyingCoupon ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" style={{ animation: 'spin 1s linear infinite' }} />
+                          Verifying
+                        </>
+                      ) : 'Apply'}
                     </button>
                   </div>
                   {couponError && (
