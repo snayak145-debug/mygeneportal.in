@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '../components/ui/accordion';
-import { Mail, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { faqs, partnerLabs } from '../mockData';
 import { useToast } from '../hooks/use-toast';
+import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const Contact = () => {
