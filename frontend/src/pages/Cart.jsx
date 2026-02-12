@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
-import { couponCodes } from '../mockData';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag, Loader2 } from 'lucide-react';
+import { couponAPI } from '../services/api';
 import '../styles/genomics.css';
 
 export const Cart = () => {
@@ -10,23 +10,45 @@ export const Cart = () => {
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponError, setCouponError] = useState('');
+  const [verifyingCoupon, setVerifyingCoupon] = useState(false);
 
-  const handleApplyCoupon = () => {
-    const coupon = couponCodes.find(c => c.code.toUpperCase() === couponCode.toUpperCase());
+  const handleApplyCoupon = async () => {
+    if (!couponCode.trim()) {
+      setCouponError('Please enter a coupon code');
+      return;
+    }
     
-    if (coupon) {
-      setAppliedCoupon(coupon);
-      setCouponError('');
-    } else {
-      setCouponError('Invalid coupon code');
+    setVerifyingCoupon(true);
+    setCouponError('');
+    
+    try {
+      const subtotal = getCartTotal();
+      const result = await couponAPI.verify(couponCode.toUpperCase(), subtotal);
+      
+      if (result.valid) {
+        setAppliedCoupon({
+          code: couponCode.toUpperCase(),
+          discount: result.discount_amount,
+          type: result.discount_type,
+          description: result.message
+        });
+        setCouponError('');
+      } else {
+        setCouponError(result.message || 'Invalid coupon code');
+        setAppliedCoupon(null);
+      }
+    } catch (error) {
+      console.error('Error verifying coupon:', error);
+      setCouponError('Failed to verify coupon. Please try again.');
       setAppliedCoupon(null);
+    } finally {
+      setVerifyingCoupon(false);
     }
   };
 
   const getDiscountAmount = () => {
     if (!appliedCoupon) return 0;
-    const subtotal = getCartTotal();
-    return Math.floor((subtotal * appliedCoupon.discount) / 100);
+    return appliedCoupon.discount;
   };
 
   const getFinalTotal = () => {
