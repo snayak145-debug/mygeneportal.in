@@ -112,14 +112,12 @@ export const Services = () => {
                   <Link to="/booking" className="btn-primary" onClick={scrollToTop}>
                     Book This Service
                   </Link>
-                  <a
-                    href="https://wa.me/919742337892?text=I want to know more about your genetic services"
-                    className="btn-whatsapp"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => handleEnquireClick(service.title)}
+                    className="btn-secondary"
                   >
-                    Ask Questions on WhatsApp
-                  </a>
+                    Ask Questions
+                  </button>
                 </div>
               </div>
             </div>
