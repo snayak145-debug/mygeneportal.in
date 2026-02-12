@@ -45,7 +45,7 @@ export const Home = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <Shield size={16} />
-            <span>Trusted by 1000+ Patients | NABL Accredited Labs</span>
+            <span>Trusted by 1000+ Patients | NABL & CAP Accredited Labs</span>
           </div>
           <h1 className="heading-hero hero-title">
             Know Yourself. Transform Your Health.
@@ -228,7 +228,7 @@ export const Home = () => {
                   <Shield size={32} color="var(--primary-teal)" />
                 </div>
               </div>
-              <h3 className="heading-3">NABL Accredited</h3>
+              <h3 className="heading-3">NABL & CAP Accredited</h3>
               <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
                 Partner with India's top NABL & CAP accredited genomics labs
               </p>

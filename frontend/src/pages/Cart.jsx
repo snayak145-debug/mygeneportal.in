@@ -300,7 +300,7 @@ export const Cart = () => {
                     ✓ Free genetic counseling included
                   </p>
                   <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    ✓ NABL accredited lab testing
+                    ✓ NABL & CAP accredited lab testing
                   </p>
                 </div>
               </div>

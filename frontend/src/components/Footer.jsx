@@ -42,7 +42,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* NABL Accredited Labs */}
+          {/* NABL & CAP Accredited Labs */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
@@ -55,7 +55,7 @@ export const Footer = () => {
             <ShieldCheck size={32} color="#00D4FF" />
             <div>
               <div style={{ fontWeight: '700', fontSize: '0.875rem', color: 'white' }}>
-                NABL ACCREDITED
+                NABL & CAP ACCREDITED
               </div>
               <div style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.8)' }}>
                 Partner Laboratory Network
@@ -114,7 +114,7 @@ export const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} MyGenePortal.in - All rights reserved. | NABL Accredited Partner Labs</p>
+        <p>&copy; {new Date().getFullYear()} MyGenePortal.in - All rights reserved. | NABL & CAP Accredited Partner Labs</p>
       </div>
     </footer>
   );
