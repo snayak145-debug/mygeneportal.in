@@ -83,28 +83,35 @@ export const Contact = () => {
             </div>
 
             <div style={{
-              background: '#E8F8F5',
+              background: '#E0F4F7',
               padding: '2rem',
               borderRadius: '1rem',
-              border: '2px solid #25D366',
+              border: '2px solid var(--primary-teal)',
               textAlign: 'center'
             }}>
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-                <div style={{ background: '#25D366', padding: '1rem', borderRadius: '50%' }}>
-                  <MessageCircle size={28} color="white" />
+                <div style={{ background: 'var(--primary-teal)', padding: '1rem', borderRadius: '50%' }}>
+                  <Send size={28} color="white" />
                 </div>
               </div>
-              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>WhatsApp</h3>
-              <a
-                href="https://wa.me/919742337892?text=Hi, I have a question about genetic testing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#25D366', textDecoration: 'none', fontWeight: '600' }}
+              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Quick Enquiry</h3>
+              <button
+                onClick={() => setEnquiryModalOpen(true)}
+                style={{
+                  background: 'var(--primary-teal)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '0.75rem 1.5rem',
+                  borderRadius: '0.5rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
               >
-                Chat Now
-              </a>
+                Enquire Now
+              </button>
               <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                Instant responses
+                Get callback within hours
               </p>
             </div>
           </div>
