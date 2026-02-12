@@ -1,19 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Users, Award, Clock, MessageCircle } from 'lucide-react';
-import { genomicTests, blogPosts, testimonials, healthCategories } from '../mockData';
+import { testsAPI, blogAPI, testimonialsAPI, categoriesAPI } from '../services/api';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../hooks/use-toast';
 import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const Home = () => {
-  const featuredTests = genomicTests.filter(test => test.popular).slice(0, 3);
-  const latestBlogs = blogPosts.slice(0, 3);
+  const [featuredTests, setFeaturedTests] = useState([]);
+  const [latestBlogs, setLatestBlogs] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [healthCategories, setHealthCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
   const { addToCart } = useCart();
   const { toast } = useToast();
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [selectedTest, setSelectedTest] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [testsData, blogsData, testimonialsData, categoriesData] = await Promise.all([
+          testsAPI.getAll({ popular: true }),
+          blogAPI.getAll(),
+          testimonialsAPI.getAll(),
+          categoriesAPI.getAll(),
+        ]);
+        
+        // Transform API data to match frontend format
+        const transformedTests = testsData.slice(0, 3).map(test => ({
+          ...test,
+          subCategory: test.sub_category,
+          sampleType: test.sample_type,
+          turnaroundTime: test.turnaround_time,
+          inStock: test.in_stock,
+        }));
+        
+        setFeaturedTests(transformedTests);
+        setLatestBlogs(blogsData.slice(0, 3));
+        setTestimonials(testimonialsData);
+        setHealthCategories(categoriesData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load data. Please refresh the page.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, [toast]);
 
   const handleAddToCart = (test) => {
     addToCart(test);
