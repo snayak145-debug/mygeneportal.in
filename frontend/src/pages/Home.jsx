@@ -51,7 +51,7 @@ export const Home = () => {
             Know Yourself. Transform Your Health.
           </h1>
           <p className="body-large hero-subtitle">
-            At MyGenePortal, we help you understand yourself better through reliable, DNA-based insights for comprehensive health and wellness. Our easy-to-use at-home DNA tests provide personalized insights tailored just for you, analyzed in secure NABL-accredited labs with certified genetic counselor support.
+            At MyGenePortal, we help you understand yourself better through reliable, DNA-based insights for comprehensive health and wellness. Our easy-to-use at-home DNA tests provide personalized insights tailored just for you, analyzed in secure NABL & CAP accredited labs with certified genetic counselor support.
           </p>
           <div className="hero-cta">
             <Link to="/booking" className="btn-primary" onClick={scrollToTop}>
