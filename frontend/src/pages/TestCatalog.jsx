@@ -145,14 +145,22 @@ export const TestCatalog = () => {
                   ))}
                 </ul>
                 <div className="test-price">{test.price}</div>
-                <Link
-                  to="/booking"
-                  className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center' }}
-                  onClick={scrollToTop}
-                >
-                  Book Test with Counseling
-                </Link>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    onClick={() => handleAddToCart(test)}
+                    className="btn-primary"
+                    style={{ flex: 1, justifyContent: 'center', fontSize: '0.875rem', padding: '0.75rem' }}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    onClick={() => handleEnquireClick(test.name)}
+                    className="btn-secondary"
+                    style={{ flex: 1, justifyContent: 'center', fontSize: '0.875rem', padding: '0.75rem' }}
+                  >
+                    Enquire
+                  </button>
+                </div>
               </div>
             ))}
           </div>
