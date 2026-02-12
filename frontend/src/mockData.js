@@ -258,21 +258,33 @@ export const faqs = [
 export const partnerLabs = [
   {
     id: 1,
-    name: "MedGenome Labs",
+    name: "MapMyGenome India Ltd",
     accreditation: "NABL & CAP Accredited",
-    location: "Bangalore"
+    location: "Hyderabad"
   },
   {
     id: 2,
-    name: "Strand Life Sciences",
+    name: "SN Gene Lab",
+    accreditation: "NABL & CAP Accredited",
+    location: "Mumbai"
+  },
+  {
+    id: 3,
+    name: "Unipath Lab",
+    accreditation: "NABL & CAP Accredited",
+    location: "Ahmedabad"
+  },
+  {
+    id: 4,
+    name: "Neuberg Center For Genomic Medicine",
     accreditation: "NABL & CAP Accredited",
     location: "Bangalore"
   },
   {
-    id: 3,
-    name: "Genomics Lab India",
+    id: 5,
+    name: "Lifecell",
     accreditation: "NABL & CAP Accredited",
-    location: "Bangalore"
+    location: "Chennai"
   }
 ];
 
