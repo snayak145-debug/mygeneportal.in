@@ -29,14 +29,9 @@ export const Header = () => {
             alt="MyGenePortal Logo" 
             style={{ height: '50px', width: 'auto' }}
           />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
-            <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary-blue)', lineHeight: '1' }}>
-              MyGenePortal
-            </span>
-            <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '500', letterSpacing: '0.5px' }}>
-              NABL & CAP Accredited Labs
-            </span>
-          </div>
+          <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary-blue)' }}>
+            MyGenePortal
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
