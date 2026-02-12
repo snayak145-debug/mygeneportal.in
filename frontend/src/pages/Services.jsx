@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, Clock, Video } from 'lucide-react';
+import { CheckCircle, Clock, Video, Award } from 'lucide-react';
 import { services } from '../mockData';
 import { Link } from 'react-router-dom';
 import { EnquiryModal } from '../components/EnquiryModal';
