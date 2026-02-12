@@ -6,12 +6,26 @@ import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const Services = () => {
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+
+  const handleEnquireClick = (serviceName) => {
+    setSelectedService(serviceName);
+    setEnquiryModalOpen(true);
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div style={{ paddingTop: '80px', minHeight: '100vh' }}>
+      <EnquiryModal 
+        isOpen={enquiryModalOpen} 
+        onClose={() => setEnquiryModalOpen(false)}
+        testName={selectedService}
+      />
+      
       {/* Hero Section */}
       <section style={{
         background: 'linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%)',
