@@ -246,7 +246,7 @@ export const faqs = [
   {
     id: 6,
     question: "Is my genetic data kept private and secure?",
-    answer: "Absolutely. We follow strict data protection protocols compliant with Indian medical privacy laws. Your genetic data is encrypted, stored securely, and never shared without your explicit consent. We partner only with NABL-accredited labs that maintain highest privacy standards."
+    answer: "Absolutely. We follow strict data protection protocols compliant with Indian medical privacy laws. Your genetic data is encrypted, stored securely, and never shared without your explicit consent. We partner only with NABL & CAP accredited labs that maintain highest privacy standards."
   },
   {
     id: 7,
@@ -265,7 +265,7 @@ export const partnerLabs = [
   {
     id: 2,
     name: "Strand Life Sciences",
-    accreditation: "NABL Accredited",
+    accreditation: "NABL & CAP Accredited",
     location: "Bangalore"
   },
   {
@@ -316,7 +316,7 @@ export const services = [
       "Simple collection instructions included",
       "Prepaid courier service",
       "Sample tracking and updates",
-      "Quality assurance with NABL labs"
+      "Quality assurance with NABL & CAP labs"
     ],
     duration: "Included with every test",
     mode: "Home Service",

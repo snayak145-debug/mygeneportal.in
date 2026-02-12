@@ -92,7 +92,7 @@ export const About = () => {
                 Certified by the Board of Genetic Counseling, India (BGCI) with advanced training in clinical genomics and years of experience, our founder recognized the critical gap in India's genetic testing landscape: the lack of expert pre-test counseling and personalized guidance.
               </p>
               <p className="body-medium" style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                MyGenePortal was founded to bridge this gap by providing comprehensive genetic counseling services alongside access to India's top NABL-accredited genomics laboratories.
+                MyGenePortal was founded to bridge this gap by providing comprehensive genetic counseling services alongside access to India's top NABL & CAP accredited genomics laboratories.
               </p>
             </div>
 
@@ -158,7 +158,7 @@ export const About = () => {
               <h3 className="heading-3" style={{ color: 'var(--primary-teal)', marginBottom: '1rem' }}>02</h3>
               <h4 className="heading-3" style={{ marginBottom: '0.75rem' }}>Lab Coordination</h4>
               <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
-                Seamless coordination with India's top NABL-accredited genomics labs for sample collection and processing.
+                Seamless coordination with India's top NABL & CAP accredited genomics labs for sample collection and processing.
               </p>
             </div>
             <div style={{ background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border-color)' }}>
