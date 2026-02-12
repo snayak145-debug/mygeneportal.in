@@ -266,7 +266,7 @@ export const partnerLabs = [
     id: 2,
     name: "SN Gene Lab",
     accreditation: "NABL & CAP Accredited",
-    location: "Mumbai"
+    location: "Surat, Gujarat"
   },
   {
     id: 3,
