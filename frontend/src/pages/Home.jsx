@@ -187,15 +187,12 @@ export const Home = () => {
                 <Link to="/services" className="btn-primary" onClick={scrollToTop}>
                   Learn About Our Services
                 </Link>
-                <a
-                  href="https://wa.me/919742337892?text=I need pre-test counseling"
-                  className="btn-whatsapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => handleEnquireClick('Pre-Test Counseling')}
+                  className="btn-secondary"
                 >
-                  <MessageCircle size={20} />
                   Get Counseling Now
-                </a>
+                </button>
               </div>
             </div>
             <div style={{ height: '100%', minHeight: '400px' }}>
