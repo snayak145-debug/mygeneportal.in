@@ -170,15 +170,13 @@ export const TestCatalog = () => {
               <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
                 No tests found matching your search criteria. Try adjusting your filters or contact us for specific test inquiries.
               </p>
-              <a
-                href="https://wa.me/919742337892?text=I'm looking for a specific genetic test"
-                className="btn-whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => handleEnquireClick('')}
+                className="btn-primary"
                 style={{ marginTop: '1rem' }}
               >
-                Contact Us on WhatsApp
-              </a>
+                Contact Us
+              </button>
             </div>
           )}
         </div>
