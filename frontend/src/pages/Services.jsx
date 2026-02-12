@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, Clock, Video } from 'lucide-react';
 import { services } from '../mockData';
 import { Link } from 'react-router-dom';
+import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const Services = () => {
