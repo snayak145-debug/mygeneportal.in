@@ -64,8 +64,8 @@ export const Booking = () => {
             {/* Counseling Image */}
             <div style={{ position: 'relative' }}>
               <img
-                src="https://images.unsplash.com/photo-1739285388427-d6f85d12a8fc"
-                alt="Genetic counselor with patient"
+                src="https://static.prod-images.emergentagent.com/jobs/e3fc99b8-330b-4f00-a6ae-9010e2661f37/images/bade748c5e64e51975acf361eac316204f776b212cef97818619031866ecf403.png"
+                alt="Genetic counselor consulting with pregnant patient"
                 style={{
                   width: '100%',
                   height: 'auto',
