@@ -45,6 +45,12 @@ export const TestCatalog = () => {
 
   return (
     <div style={{ paddingTop: '80px', minHeight: '100vh', background: 'var(--bg-light)' }}>
+      <EnquiryModal 
+        isOpen={enquiryModalOpen} 
+        onClose={() => setEnquiryModalOpen(false)}
+        testName={selectedTest}
+      />
+      
       <section className="section">
         <div className="container">
           <div className="section-header">
