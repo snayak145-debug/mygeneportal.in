@@ -145,14 +145,22 @@ export const Home = () => {
                   <div>Results: {test.turnaroundTime}</div>
                 </div>
                 <div className="test-price">{test.price}</div>
-                <Link
-                  to="/booking"
-                  className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center' }}
-                  onClick={scrollToTop}
-                >
-                  Book Now
-                </Link>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    onClick={() => handleAddToCart(test)}
+                    className="btn-primary"
+                    style={{ flex: 1, justifyContent: 'center' }}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    onClick={() => handleEnquireClick(test.name)}
+                    className="btn-secondary"
+                    style={{ flex: 1, justifyContent: 'center' }}
+                  >
+                    Enquire
+                  </button>
+                </div>
               </div>
             ))}
           </div>
