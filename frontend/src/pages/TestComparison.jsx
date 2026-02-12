@@ -154,8 +154,25 @@ export const TestComparison = () => {
               <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                 Complex diagnostic tests requiring physician consultation
               </p>
-              <Link to="/booking" className="btn-primary" style={{ width: '100%', justifyContent: 'center', background: 'var(--primary-blue)' }} onClick={scrollToTop}>
-                Request Consultation
+              <Link 
+                to="/booking" 
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  width: '100%', 
+                  padding: '1rem 2rem',
+                  background: 'var(--primary-blue)',
+                  color: 'white',
+                  borderRadius: '0.5rem',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease'
+                }} 
+                onClick={scrollToTop}
+              >
+                Book the Testing
               </Link>
             </div>
           </div>
