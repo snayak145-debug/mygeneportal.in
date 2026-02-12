@@ -13,6 +13,7 @@ import '../styles/genomics.css';
 
 export const Contact = () => {
   const { toast } = useToast();
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [contactForm, setContactForm] = React.useState({
     name: '',
     email: '',
