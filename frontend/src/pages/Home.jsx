@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Users, Award, Clock, MessageCircle } from 'lucide-react';
-import { genomicTests, blogPosts, testimonials } from '../mockData';
+import { genomicTests, blogPosts, testimonials, healthCategories } from '../mockData';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../hooks/use-toast';
 import { EnquiryModal } from '../components/EnquiryModal';
