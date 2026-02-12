@@ -159,6 +159,65 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Health Categories - MapMyGenome Style */}
+      <section className="section section-light">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-1">Browse Tests by Health Category</h2>
+            <p className="body-large">
+              Find the right genetic test for your specific health concern
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {healthCategories.map((category) => (
+              <Link
+                key={category.id}
+                to="/tests"
+                onClick={scrollToTop}
+                style={{
+                  position: 'relative',
+                  borderRadius: '1rem',
+                  overflow: 'hidden',
+                  height: '250px',
+                  textDecoration: 'none',
+                  display: 'block',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0))',
+                  padding: '3rem 1.5rem 1.5rem',
+                  color: 'white'
+                }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>
+                    {category.name}
+                  </h3>
+                  <p style={{ fontSize: '0.875rem', opacity: 0.9 }}>
+                    {category.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Signals */}
       <section className="section section-light">
         <div className="container">
