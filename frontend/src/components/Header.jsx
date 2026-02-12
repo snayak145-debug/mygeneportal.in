@@ -23,12 +23,20 @@ export const Header = () => {
   return (
     <header className="genomics-header">
       <div className="header-container">
-        <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
           <img 
             src="https://customer-assets.emergentagent.com/job_genetic-services/artifacts/lll47xq1_Gemini_Generated_Image_nnbeuznnbeuznnbe.png" 
             alt="MyGenePortal Logo" 
-            style={{ height: '45px', width: 'auto' }}
+            style={{ height: '50px', width: 'auto' }}
           />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
+            <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary-blue)', lineHeight: '1' }}>
+              MyGenePortal
+            </span>
+            <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '500', letterSpacing: '0.5px' }}>
+              NABL & CAP Accredited Labs
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
