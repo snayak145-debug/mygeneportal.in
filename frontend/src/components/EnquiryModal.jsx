@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { X, Send } from 'lucide-react';
+import { X, Send, Loader2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { leadsAPI } from '../services/api';
 import '../styles/genomics.css';
 
 export const EnquiryModal = ({ isOpen, onClose, testName = '' }) => {
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     mobileNo: '',
@@ -24,29 +26,47 @@ export const EnquiryModal = ({ isOpen, onClose, testName = '' }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     
-    // Mock submission - will be replaced with actual API call to backend
-    console.log('Lead submitted:', formData);
-    
-    // Here you would make an API call to save the lead
-    // await axios.post(`${BACKEND_URL}/api/leads`, formData);
-    
-    toast({
-      title: "Enquiry Submitted Successfully!",
-      description: "Our genetic counsellor will contact you within 24 hours to schedule your appointment.",
-    });
-    
-    // Reset form and close modal
-    setFormData({
-      fullName: '',
-      mobileNo: '',
-      email: '',
-      testName: '',
-      preferredDate: '',
-      preferredTime: '',
-      message: ''
-    });
-    onClose();
+    try {
+      // Submit lead to backend API
+      await leadsAPI.create({
+        name: formData.fullName,
+        email: formData.email,
+        mobile: formData.mobileNo,
+        test_of_interest: formData.testName,
+        preferred_date: formData.preferredDate,
+        preferred_time: formData.preferredTime,
+        notes: formData.message,
+        source: 'website_enquiry_modal'
+      });
+      
+      toast({
+        title: "Enquiry Submitted Successfully!",
+        description: "Our genetic counsellor will contact you within 24 hours to schedule your appointment.",
+      });
+      
+      // Reset form and close modal
+      setFormData({
+        fullName: '',
+        mobileNo: '',
+        email: '',
+        testName: '',
+        preferredDate: '',
+        preferredTime: '',
+        message: ''
+      });
+      onClose();
+    } catch (error) {
+      console.error('Error submitting lead:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your enquiry. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
