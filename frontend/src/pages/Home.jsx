@@ -58,15 +58,13 @@ export const Home = () => {
               Book Free Pre-Test Counseling
               <ArrowRight size={20} />
             </Link>
-            <a
-              href="https://wa.me/919742337892?text=Hi, I'm interested in genetic testing services"
-              className="btn-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => handleEnquireClick('')}
+              className="btn-secondary"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
             >
-              <MessageCircle size={20} />
-              Chat on WhatsApp
-            </a>
+              Enquire Now
+            </button>
           </div>
         </div>
       </section>
