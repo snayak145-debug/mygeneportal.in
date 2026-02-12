@@ -10,6 +10,23 @@ export const TestCatalog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeSubCategory, setActiveSubCategory] = useState('All');
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [selectedTest, setSelectedTest] = useState('');
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (test) => {
+    addToCart(test);
+    toast({
+      title: "Added to Cart!",
+      description: `${test.name} has been added to your cart.`,
+    });
+  };
+
+  const handleEnquireClick = (testName) => {
+    setSelectedTest(testName);
+    setEnquiryModalOpen(true);
+  };
 
   const categories = ['All', 'Clinical Genomics', 'Preventive Genomics'];
   const subCategories = ['All', 'Oncology', 'Neurology', 'Prenatal', 'Cardiology', 'Reproductive', 'Wellness', 'Nutrition'];
