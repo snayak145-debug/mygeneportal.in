@@ -273,7 +273,7 @@ export const Cart = () => {
                     }}>
                       <Tag size={16} color="var(--success-green)" />
                       <span style={{ fontSize: '0.875rem', color: 'var(--success-green)', fontWeight: '600' }}>
-                        {appliedCoupon.code} Applied! {appliedCoupon.discount}% off
+                        {appliedCoupon.code} Applied! ₹{appliedCoupon.discount.toLocaleString()} off
                       </span>
                     </div>
                   )}
@@ -286,7 +286,7 @@ export const Cart = () => {
                   </div>
                   {appliedCoupon && (
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                      <span style={{ color: 'var(--success-green)' }}>Discount ({appliedCoupon.discount}%)</span>
+                      <span style={{ color: 'var(--success-green)' }}>Coupon Discount</span>
                       <span style={{ fontWeight: '600', color: 'var(--success-green)' }}>-₹{getDiscountAmount().toLocaleString()}</span>
                     </div>
                   )}
