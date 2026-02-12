@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { Lock, CreditCard, QrCode } from 'lucide-react';
+import { Lock, CreditCard, QrCode, Loader2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { ordersAPI } from '../services/api';
 import '../styles/genomics.css';
 
 export const Checkout = () => {
@@ -10,9 +11,11 @@ export const Checkout = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [paymentMethod, setPaymentMethod] = useState('razorpay');
+  const [processing, setProcessing] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    mobile: '',
     address: '',
     city: '',
     state: '',
@@ -31,21 +34,53 @@ export const Checkout = () => {
     });
   };
 
-  const handlePayment = (e) => {
+  const handlePayment = async (e) => {
     e.preventDefault();
+    setProcessing(true);
     
-    // Mock payment processing
-    console.log('Processing payment:', { formData, paymentMethod, total: getCartTotal() });
-    
-    // Simulate payment success
-    setTimeout(() => {
+    try {
+      // Prepare order items
+      const orderItems = cartItems.map(item => ({
+        test_id: item.id.toString(),
+        test_name: item.name,
+        price: item.price,
+        quantity: item.quantity || 1
+      }));
+
+      // Create order in backend
+      const order = await ordersAPI.create({
+        customer_name: formData.name,
+        customer_email: formData.email,
+        customer_mobile: formData.mobile,
+        customer_address: formData.address,
+        customer_city: formData.city,
+        customer_state: formData.state,
+        customer_pincode: formData.pincode,
+        items: orderItems,
+        subtotal: getCartTotal(),
+        discount_amount: 0,
+        coupon_code: '',
+        total_amount: getCartTotal()
+      });
+      
+      // Note: Razorpay integration will be added here
+      // For now, simulate payment success
       toast({
         title: "Order Placed Successfully!",
-        description: "Your sample collection kit will be delivered within 3-5 business days. Check your email for order details.",
+        description: `Order ID: ${order.tracking_id}. Your sample collection kit will be delivered within 3-5 business days. Check your email for order details.`,
       });
       clearCart();
       navigate('/');
-    }, 1500);
+    } catch (error) {
+      console.error('Error creating order:', error);
+      toast({
+        title: "Order Failed",
+        description: "There was an error processing your order. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setProcessing(false);
+    }
   };
 
   return (
