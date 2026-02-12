@@ -347,11 +347,27 @@ export const Checkout = () => {
 
                   <button
                     type="submit"
+                    disabled={processing}
                     className="btn-primary"
-                    style={{ width: '100%', justifyContent: 'center', padding: '1.25rem' }}
+                    style={{ 
+                      width: '100%', 
+                      justifyContent: 'center', 
+                      padding: '1.25rem',
+                      opacity: processing ? 0.7 : 1,
+                      cursor: processing ? 'not-allowed' : 'pointer'
+                    }}
                   >
-                    <Lock size={20} />
-                    Complete Secure Payment
+                    {processing ? (
+                      <>
+                        <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} />
+                        Processing...
+                      </>
+                    ) : (
+                      <>
+                        <Lock size={20} />
+                        Complete Secure Payment
+                      </>
+                    )}
                   </button>
 
                   <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '1rem' }}>
