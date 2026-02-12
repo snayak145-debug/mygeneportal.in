@@ -12,6 +12,8 @@ export const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Tests', path: '/tests' },
+    { name: 'Compare', path: '/test-comparison' },
+    { name: 'Track Sample', path: '/track-sample' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
