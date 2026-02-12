@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { genomicTests } from '../mockData';
-import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { useToast } from '../hooks/use-toast';
+import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const TestCatalog = () => {
