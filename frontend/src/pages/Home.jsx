@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Users, Award, Clock } from 'lucide-react';
+import { ArrowRight, Shield, Users, Award, Clock, MessageCircle } from 'lucide-react';
 import { genomicTests, blogPosts } from '../mockData';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../hooks/use-toast';
