@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Activity, ShoppingCart } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import '../styles/genomics.css';
 
@@ -23,9 +23,12 @@ export const Header = () => {
   return (
     <header className="genomics-header">
       <div className="header-container">
-        <Link to="/" className="logo">
-          <Activity size={28} />
-          <span>MyGenePortal</span>
+        <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_genetic-services/artifacts/lll47xq1_Gemini_Generated_Image_nnbeuznnbeuznnbe.png" 
+            alt="MyGenePortal Logo" 
+            style={{ height: '45px', width: 'auto' }}
+          />
         </Link>
 
         {/* Desktop Navigation */}
