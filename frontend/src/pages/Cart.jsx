@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
+import { couponCodes } from '../mockData';
 import '../styles/genomics.css';
 
 export const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, getCartCount } = useCart();
+  const [couponCode, setCouponCode] = useState('');
+  const [appliedCoupon, setAppliedCoupon] = useState(null);
+  const [couponError, setCouponError] = useState('');
+
+  const handleApplyCoupon = () => {
+    const coupon = couponCodes.find(c => c.code.toUpperCase() === couponCode.toUpperCase());
+    
+    if (coupon) {
+      setAppliedCoupon(coupon);
+      setCouponError('');
+    } else {
+      setCouponError('Invalid coupon code');
+      setAppliedCoupon(null);
+    }
+  };
+
+  const getDiscountAmount = () => {
+    if (!appliedCoupon) return 0;
+    const subtotal = getCartTotal();
+    return Math.floor((subtotal * appliedCoupon.discount) / 100);
+  };
+
+  const getFinalTotal = () => {
+    return getCartTotal() - getDiscountAmount();
+  };
 
   if (cartItems.length === 0) {
     return (
