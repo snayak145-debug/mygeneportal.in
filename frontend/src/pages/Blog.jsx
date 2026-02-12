@@ -121,7 +121,7 @@ export const Blog = () => {
                   <div className="blog-meta">
                     <span>{post.date}</span>
                     <span>•</span>
-                    <span>{post.readTime}</span>
+                    <span>{post.readTime || post.read_time}</span>
                   </div>
                   <h3 className="blog-title">{post.title}</h3>
                   <p className="blog-excerpt">{post.excerpt}</p>
