@@ -190,11 +190,75 @@ export const Cart = () => {
               }}>
                 <h3 className="heading-3" style={{ marginBottom: '1.5rem' }}>Order Summary</h3>
                 
+                {/* Coupon Code Input */}
+                <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-color)' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600', fontSize: '0.875rem' }}>
+                    Have a Coupon Code?
+                  </label>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <input
+                      type="text"
+                      value={couponCode}
+                      onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                      placeholder="MYGENE5 or MYGENE10"
+                      style={{
+                        flex: 1,
+                        padding: '0.75rem',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '0.5rem',
+                        fontSize: '0.875rem'
+                      }}
+                    />
+                    <button
+                      onClick={handleApplyCoupon}
+                      style={{
+                        background: 'var(--primary-teal)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '0.5rem',
+                        padding: '0 1.5rem',
+                        cursor: 'pointer',
+                        fontSize: '0.875rem',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Apply
+                    </button>
+                  </div>
+                  {couponError && (
+                    <p style={{ fontSize: '0.75rem', color: 'var(--error-red)', marginTop: '0.5rem' }}>
+                      {couponError}
+                    </p>
+                  )}
+                  {appliedCoupon && (
+                    <div style={{
+                      marginTop: '0.75rem',
+                      padding: '0.75rem',
+                      background: '#E8F8F5',
+                      borderRadius: '0.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}>
+                      <Tag size={16} color="var(--success-green)" />
+                      <span style={{ fontSize: '0.875rem', color: 'var(--success-green)', fontWeight: '600' }}>
+                        {appliedCoupon.code} Applied! {appliedCoupon.discount}% off
+                      </span>
+                    </div>
+                  )}
+                </div>
+                
                 <div style={{ marginBottom: '1rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                     <span style={{ color: 'var(--text-secondary)' }}>Subtotal</span>
                     <span style={{ fontWeight: '600' }}>₹{getCartTotal().toLocaleString()}</span>
                   </div>
+                  {appliedCoupon && (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                      <span style={{ color: 'var(--success-green)' }}>Discount ({appliedCoupon.discount}%)</span>
+                      <span style={{ fontWeight: '600', color: 'var(--success-green)' }}>-₹{getDiscountAmount().toLocaleString()}</span>
+                    </div>
+                  )}
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                     <span style={{ color: 'var(--text-secondary)' }}>Shipping</span>
                     <span style={{ color: 'var(--success-green)', fontWeight: '600' }}>FREE</span>
@@ -207,7 +271,7 @@ export const Cart = () => {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', fontSize: '1.25rem' }}>
                   <span style={{ fontWeight: '700' }}>Total</span>
-                  <span style={{ fontWeight: '700', color: 'var(--primary-blue)' }}>₹{getCartTotal().toLocaleString()}</span>
+                  <span style={{ fontWeight: '700', color: 'var(--primary-blue)' }}>₹{getFinalTotal().toLocaleString()}</span>
                 </div>
 
                 <Link
