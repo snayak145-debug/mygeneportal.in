@@ -1,45 +1,47 @@
 import React, { useState } from 'react';
-import { Search, Package, FlaskConical, FileCheck, CheckCircle } from 'lucide-react';
+import { Search, Package, FlaskConical, FileCheck, CheckCircle, Loader2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { trackingAPI } from '../services/api';
 import '../styles/genomics.css';
 
 export const TrackSample = () => {
   const { toast } = useToast();
   const [trackingId, setTrackingId] = useState('');
   const [sampleStatus, setSampleStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  // Mock tracking data - will be replaced with actual API
-  const mockStatuses = {
-    'MGP001234': {
-      orderId: 'MGP001234',
-      testName: 'Whole Exome Sequencing',
-      status: 'sequencing',
-      currentStage: 2,
-      stages: [
-        { name: 'Sample Received', completed: true, date: '2024-01-15' },
-        { name: 'In Lab Processing', completed: true, date: '2024-01-16' },
-        { name: 'Sequencing', completed: false, date: null },
-        { name: 'Report Generation', completed: false, date: null },
-        { name: 'Report Ready', completed: false, date: null }
-      ],
-      estimatedCompletion: '2024-02-10'
-    }
-  };
-
-  const handleTrack = (e) => {
+  const handleTrack = async (e) => {
     e.preventDefault();
+    setLoading(true);
     
-    // Mock tracking - replace with actual API call
-    const status = mockStatuses[trackingId.toUpperCase()];
-    
-    if (status) {
-      setSampleStatus(status);
-    } else {
+    try {
+      const status = await trackingAPI.track(trackingId);
+      
+      // Transform API data to match frontend format
+      const transformedStatus = {
+        orderId: status.tracking_id,
+        testName: status.test_name,
+        currentStage: status.timeline.length - 1,
+        stages: status.timeline.map((event, index) => ({
+          name: event.status,
+          completed: index < status.timeline.length,
+          date: event.date,
+          description: event.description
+        })),
+        estimatedCompletion: status.estimated_completion
+      };
+      
+      setSampleStatus(transformedStatus);
+    } catch (error) {
+      console.error('Error tracking sample:', error);
       toast({
         title: "Tracking ID Not Found",
-        description: "Please check your tracking ID and try again. You can find it in your order confirmation email.",
+        description: error.message || "Please check your tracking ID and try again. You can find it in your order confirmation email.",
+        variant: "destructive",
       });
       setSampleStatus(null);
+    } finally {
+      setLoading(false);
     }
   };
 
