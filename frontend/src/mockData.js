@@ -274,3 +274,34 @@ export const cartInitialState = {
   items: [],
   total: 0
 };
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Dr. Priya Sharma",
+    role: "Cardiologist",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200",
+    quote: "MyGenePortal's comprehensive genetic testing has been invaluable for my patients. The detailed reports and expert counseling make a real difference in preventive care."
+  },
+  {
+    id: 2,
+    name: "Rajesh Kumar",
+    role: "Fitness Entrepreneur",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+    quote: "The pharmacogenomics test helped me understand my body's response to medications. Game-changer for personalized health optimization!"
+  },
+  {
+    id: 3,
+    name: "Ananya Desai",
+    role: "Health & Wellness Coach",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200",
+    quote: "Fast shipping, great packaging, and the genetic counseling session was incredibly informative. Highly recommend MyGenePortal to all my clients."
+  },
+  {
+    id: 4,
+    name: "Vikram Singh",
+    role: "IT Professional",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200",
+    quote: "Outstanding customer support and comprehensive genetic insights. The gut microbiome test gave me actionable recommendations that truly work."
+  }
+];
