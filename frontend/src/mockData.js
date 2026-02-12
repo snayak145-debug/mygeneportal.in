@@ -360,3 +360,63 @@ export const testimonials = [
     quote: "Outstanding customer support and comprehensive genetic insights. The gut microbiome test gave me actionable recommendations that truly work."
   }
 ];
+
+export const healthCategories = [
+  {
+    id: 1,
+    name: "Cancer Genomics",
+    description: "Hereditary cancer risk & treatment guidance",
+    image: "https://images.unsplash.com/photo-1576671081803-5dcb9836dc61?w=600",
+    tests: ["Hereditary Cancer Panel", "Whole Exome Sequencing"]
+  },
+  {
+    id: 2,
+    name: "Heart Health",
+    description: "Cardiac genetic testing & risk assessment",
+    image: "https://images.unsplash.com/photo-1646441453885-86f3cbc260b4?w=600",
+    tests: ["Cardiac Genetic Panel"]
+  },
+  {
+    id: 3,
+    name: "Pregnancy & Prenatal",
+    description: "Non-invasive prenatal testing",
+    image: "https://images.unsplash.com/photo-1768776180013-5c33c9fd9ada?w=600",
+    tests: ["NIPT", "NIPT Advanced", "Carrier Screening"]
+  },
+  {
+    id: 4,
+    name: "Diabetes & Metabolism",
+    description: "Genetic risk & lifestyle optimization",
+    image: "https://images.unsplash.com/photo-1576169210859-6796c4b93c32?w=600",
+    tests: ["Diabetes Risk Panel", "Nutrigenomics"]
+  },
+  {
+    id: 5,
+    name: "Pharmacogenomics",
+    description: "Personalized medication response",
+    image: "https://images.unsplash.com/photo-1576671081803-5dcb9836dc61?w=600",
+    tests: ["Pharmacogenomics Panel"]
+  },
+  {
+    id: 6,
+    name: "Wellness & Prevention",
+    description: "Gut health & nutritional genomics",
+    image: "https://images.unsplash.com/photo-1578496480240-32d3e0c04525?w=600",
+    tests: ["Gut Microbiome Test", "Comprehensive Gut Microbiome", "Nutrigenomics"]
+  }
+];
+
+export const couponCodes = [
+  {
+    code: "MYGENE5",
+    discount: 5,
+    type: "percentage",
+    description: "Get 5% off on your order"
+  },
+  {
+    code: "MYGENE10",
+    discount: 10,
+    type: "percentage",
+    description: "Get 10% off on your order"
+  }
+];
