@@ -309,6 +309,61 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Customer Testimonials - MapMyGenome Style */}
+      <section className="section section-gray">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-1">Hear From Our Happy Customers</h2>
+            <p className="body-large">
+              Discover how MyGenePortal is making a meaningful difference in people's lives
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                style={{
+                  background: 'white',
+                  borderRadius: '1rem',
+                  padding: '2rem',
+                  border: '1px solid var(--border-color)',
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    margin: '0 auto 1.5rem',
+                    border: '3px solid var(--light-blue)'
+                  }}
+                />
+                <p style={{
+                  fontSize: '1rem',
+                  fontStyle: 'italic',
+                  color: 'var(--text-secondary)',
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.7'
+                }}>
+                  "{testimonial.quote}"
+                </p>
+                <h4 className="heading-3" style={{ marginBottom: '0.25rem', fontSize: '1.125rem' }}>
+                  {testimonial.name}
+                </h4>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                  {testimonial.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Latest Blog Posts */}
       <section className="section section-gray">
         <div className="container">
