@@ -264,11 +264,28 @@ export const EnquiryModal = ({ isOpen, onClose, testName = '' }) => {
             {/* Submit Button */}
             <button
               type="submit"
+              disabled={submitting}
               className="btn-primary"
-              style={{ width: '100%', padding: '1rem', fontSize: '1rem', justifyContent: 'center' }}
+              style={{ 
+                width: '100%', 
+                padding: '1rem', 
+                fontSize: '1rem', 
+                justifyContent: 'center',
+                opacity: submitting ? 0.7 : 1,
+                cursor: submitting ? 'not-allowed' : 'pointer'
+              }}
             >
-              <Send size={20} />
-              Submit Enquiry
+              {submitting ? (
+                <>
+                  <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <Send size={20} />
+                  Submit Enquiry
+                </>
+              )}
             </button>
 
             <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center' }}>
