@@ -112,16 +112,6 @@ export const TestComparison = () => {
                     ₹20,000 - ₹45,000
                   </td>
                 </tr>
-                <tr style={{ background: 'var(--bg-light)' }}>
-                  <td style={{ padding: '1.25rem', fontWeight: '600' }}>Insurance Coverage</td>
-                  <td style={{ padding: '1.25rem', textAlign: 'center', borderLeft: '1px solid var(--border-color)' }}>
-                    <X size={24} color="var(--error-red)" style={{ margin: '0 auto' }} />
-                  </td>
-                  <td style={{ padding: '1.25rem', textAlign: 'center', borderLeft: '1px solid var(--border-color)' }}>
-                    <Check size={24} color="var(--success-green)" style={{ margin: '0 auto' }} />
-                    <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>Sometimes</div>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
