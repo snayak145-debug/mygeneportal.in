@@ -6,17 +6,34 @@ export const genomicTests = [
     name: "Whole Exome Sequencing (WES)",
     category: "Clinical Genomics",
     subCategory: "Oncology",
-    description: "Comprehensive analysis of protein-coding genes to identify disease-causing mutations in cancer patients.",
+    description: "Comprehensive analysis of protein-coding genes to identify disease-causing mutations. Covers 99% of all protein-coding genes with clinical-grade accuracy.",
     sampleType: "Blood/Saliva",
     turnaroundTime: "4-6 weeks",
     price: "₹20,000",
     mrp: "₹25,000",
     discount: "20% OFF",
-    features: ["99% exome coverage", "Germline & somatic variants", "Detailed clinical report", "Free genetic counseling included"],
-    inStock: true
+    features: ["99% exome coverage", "20,000+ genes analyzed", "ACMG guidelines", "Germline & somatic variants", "Detailed clinical report", "Free genetic counseling included"],
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1732046801426-f32529468176?w=400"
   },
   {
     id: 2,
+    name: "Whole Genome Sequencing (WGS)",
+    category: "Clinical Genomics",
+    subCategory: "Comprehensive",
+    description: "Complete sequencing of your entire genome including all coding and non-coding regions. The most comprehensive genetic test available for rare disease diagnosis and research.",
+    sampleType: "Blood",
+    turnaroundTime: "6-8 weeks",
+    price: "₹70,000",
+    mrp: "₹90,000",
+    discount: "22% OFF",
+    features: ["Complete 3 billion base pairs", "100% genome coverage", "Illumina NovaSeq technology", "Rare disease detection", "Research-grade accuracy", "Lifetime data storage", "Free genetic counseling"],
+    inStock: true,
+    popular: true,
+    image: "https://images.unsplash.com/photo-1579154392128-bf8c7ebee541?w=400"
+  },
+  {
+    id: 3,
     name: "NIPT (Non-Invasive Prenatal Testing)",
     category: "Clinical Genomics",
     subCategory: "Prenatal",
@@ -28,10 +45,11 @@ export const genomicTests = [
     discount: "20% OFF",
     features: ["99% accuracy", "No risk to baby", "From 10 weeks pregnancy", "Trisomy 21, 18, 13 detection"],
     inStock: true,
-    popular: true
+    popular: true,
+    image: "https://images.unsplash.com/photo-1768776180013-5c33c9fd9ada?w=400"
   },
   {
-    id: 3,
+    id: 4,
     name: "NIPT Advanced",
     category: "Clinical Genomics",
     subCategory: "Prenatal",
@@ -42,10 +60,11 @@ export const genomicTests = [
     mrp: "₹22,000",
     discount: "18% OFF",
     features: ["Extended chromosome screening", "Gender determination", "Microdeletion syndromes", "99.9% accuracy"],
-    inStock: true
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1768776180013-5c33c9fd9ada?w=400"
   },
   {
-    id: 4,
+    id: 5,
     name: "Pharmacogenomics Panel",
     category: "Preventive Genomics",
     subCategory: "Wellness",
@@ -57,10 +76,11 @@ export const genomicTests = [
     discount: "23% OFF",
     features: ["150+ medications analyzed", "Lifetime validity", "Drug metabolism insights", "Personalized dosing recommendations"],
     inStock: true,
-    popular: true
+    popular: true,
+    image: "https://images.unsplash.com/photo-1576671081803-5dcb9836dc61?w=400"
   },
   {
-    id: 5,
+    id: 6,
     name: "Gut Microbiome Test (16S rRNA Based)",
     category: "Preventive Genomics",
     subCategory: "Wellness",
@@ -71,10 +91,11 @@ export const genomicTests = [
     mrp: "₹13,000",
     discount: "23% OFF",
     features: ["Bacterial diversity analysis", "Gut health score", "Dietary recommendations", "Probiotic suggestions"],
-    inStock: true
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1578496480240-32d3e0c04525?w=400"
   },
   {
-    id: 6,
+    id: 7,
     name: "Comprehensive Gut Microbiome Test (Metagenomic)",
     category: "Preventive Genomics",
     subCategory: "Wellness",
@@ -86,10 +107,11 @@ export const genomicTests = [
     discount: "25% OFF",
     features: ["Complete microbiome profiling", "Bacteria, fungi & virus detection", "Functional gene analysis", "Personalized health insights"],
     inStock: true,
-    popular: true
+    popular: true,
+    image: "https://images.unsplash.com/photo-1578496480240-32d3e0c04525?w=400"
   },
   {
-    id: 7,
+    id: 8,
     name: "Hereditary Cancer Panel",
     category: "Clinical Genomics",
     subCategory: "Oncology",
@@ -100,10 +122,41 @@ export const genomicTests = [
     mrp: "₹40,000",
     discount: "20% OFF",
     features: ["50+ cancer genes", "Risk assessment report", "Family screening guidance", "Free pre & post-test counseling"],
-    inStock: true
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1576671081803-5dcb9836dc61?w=400"
   },
   {
-    id: 8,
+    id: 9,
+    name: "Cardiac Genetic Panel",
+    category: "Clinical Genomics",
+    subCategory: "Cardiology",
+    description: "Comprehensive testing for inherited cardiac conditions including cardiomyopathy and arrhythmia syndromes.",
+    sampleType: "Blood",
+    turnaroundTime: "4-5 weeks",
+    price: "₹35,000",
+    mrp: "₹43,000",
+    discount: "19% OFF",
+    features: ["100+ cardiac genes", "Sudden death risk assessment", "Family cascade screening", "Treatment guidance"],
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1646441453885-86f3cbc260b4?w=400"
+  },
+  {
+    id: 10,
+    name: "Diabetes Risk Panel",
+    category: "Preventive Genomics",
+    subCategory: "Wellness",
+    description: "Genetic analysis for Type 2 diabetes risk, insulin resistance, and blood sugar metabolism.",
+    sampleType: "Saliva",
+    turnaroundTime: "2-3 weeks",
+    price: "₹13,500",
+    mrp: "₹17,000",
+    discount: "21% OFF",
+    features: ["T2D genetic risk", "Insulin sensitivity genes", "Glucose metabolism", "Lifestyle recommendations"],
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1576169210859-6796c4b93c32?w=400"
+  },
+  {
+    id: 11,
     name: "Carrier Screening Panel",
     category: "Clinical Genomics",
     subCategory: "Reproductive",
@@ -114,10 +167,11 @@ export const genomicTests = [
     mrp: "₹35,000",
     discount: "20% OFF",
     features: ["300+ genetic conditions", "Couple screening available", "Reproductive counseling", "Risk calculation for offspring"],
-    inStock: true
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1768776180013-5c33c9fd9ada?w=400"
   },
   {
-    id: 9,
+    id: 12,
     name: "Nutrigenomics Test",
     category: "Preventive Genomics",
     subCategory: "Nutrition",
@@ -128,7 +182,8 @@ export const genomicTests = [
     mrp: "₹18,000",
     discount: "17% OFF",
     features: ["Macronutrient metabolism", "Vitamin sensitivities", "Exercise response", "Weight management insights"],
-    inStock: true
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1578496480240-32d3e0c04525?w=400"
   }
 ];
 
