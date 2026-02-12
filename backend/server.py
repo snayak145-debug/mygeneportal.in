@@ -8,7 +8,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from enum import Enum
 
 ROOT_DIR = Path(__file__).parent
@@ -373,7 +373,7 @@ async def create_order(order_data: OrderCreate):
                     description="Sample collection kit has been dispatched"
                 )
             ],
-            estimated_completion=(datetime.now(timezone.utc).replace(day=datetime.now(timezone.utc).day + 21)).strftime("%Y-%m-%d")
+            estimated_completion=(datetime.now(timezone.utc) + timedelta(days=21)).strftime("%Y-%m-%d")
         )
         tracking_doc = tracking.model_dump()
         tracking_doc['created_at'] = tracking_doc['created_at'].isoformat()
