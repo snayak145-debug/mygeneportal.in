@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import { genomicTests } from '../mockData';
+import { testsAPI } from '../services/api';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../hooks/use-toast';
 import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
 
 export const TestCatalog = () => {
+  const [tests, setTests] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeSubCategory, setActiveSubCategory] = useState('All');
@@ -14,6 +16,35 @@ export const TestCatalog = () => {
   const [selectedTest, setSelectedTest] = useState('');
   const { addToCart } = useCart();
   const { toast } = useToast();
+
+  useEffect(() => {
+    const fetchTests = async () => {
+      try {
+        setLoading(true);
+        const testsData = await testsAPI.getAll();
+        // Transform API data to match frontend format
+        const transformedTests = testsData.map(test => ({
+          ...test,
+          subCategory: test.sub_category,
+          sampleType: test.sample_type,
+          turnaroundTime: test.turnaround_time,
+          inStock: test.in_stock,
+        }));
+        setTests(transformedTests);
+      } catch (error) {
+        console.error('Error fetching tests:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load tests. Please refresh the page.",
+          variant: "destructive",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchTests();
+  }, [toast]);
 
   const handleAddToCart = (test) => {
     addToCart(test);
@@ -31,7 +62,7 @@ export const TestCatalog = () => {
   const categories = ['All', 'Clinical Genomics', 'Preventive Genomics'];
   const subCategories = ['All', 'Oncology', 'Neurology', 'Prenatal', 'Cardiology', 'Reproductive', 'Wellness', 'Nutrition'];
 
-  const filteredTests = genomicTests.filter((test) => {
+  const filteredTests = tests.filter((test) => {
     const matchesSearch = test.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          test.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = activeCategory === 'All' || test.category === activeCategory;
