@@ -69,6 +69,96 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Getting Started - Process Flow */}
+      <section className="section section-white">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="heading-1">Getting Started</h2>
+            <p className="body-large">
+              Start your wellness journey with these simple steps
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                width: '80px', 
+                height: '80px', 
+                background: 'var(--light-blue)', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                margin: '0 auto 1.5rem',
+                fontSize: '2rem',
+                fontWeight: '700',
+                color: 'var(--primary-blue)'
+              }}>1</div>
+              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Order & Activate</h3>
+              <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
+                Explore our products and choose the one that fits your needs. Place your order and easily register online to activate your profile.
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                width: '80px', 
+                height: '80px', 
+                background: 'var(--light-blue)', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                margin: '0 auto 1.5rem',
+                fontSize: '2rem',
+                fontWeight: '700',
+                color: 'var(--primary-blue)'
+              }}>2</div>
+              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Collect Sample at Home</h3>
+              <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
+                Open the kit and follow the instructions to provide your saliva or stool sample—all from the comfort of your home.
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                width: '80px', 
+                height: '80px', 
+                background: 'var(--light-blue)', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                margin: '0 auto 1.5rem',
+                fontSize: '2rem',
+                fontWeight: '700',
+                color: 'var(--primary-blue)'
+              }}>3</div>
+              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Send Us Your Sample</h3>
+              <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
+                Seal your collected sample securely and return it to us using our prepaid courier service for testing.
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ 
+                width: '80px', 
+                height: '80px', 
+                background: 'var(--light-blue)', 
+                borderRadius: '50%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                margin: '0 auto 1.5rem',
+                fontSize: '2rem',
+                fontWeight: '700',
+                color: 'var(--primary-blue)'
+              }}>4</div>
+              <h3 className="heading-3" style={{ marginBottom: '0.75rem' }}>Genetic Consultation</h3>
+              <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
+                Once you receive your report, schedule a FREE genetic counseling session to understand your DNA insights better.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Signals */}
       <section className="section section-light">
         <div className="container">
