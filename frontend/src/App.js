@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -25,12 +25,128 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-function App() {
-  // WhatsApp link with properly encoded message
-  const whatsappNumber = "918618408028";
-  const whatsappMessage = encodeURIComponent("Hi, I'm interested in genetic testing services from MyGenePortal");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+// Phone Icon Component
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </svg>
+);
 
+// Close Icon Component
+const CloseIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+  </svg>
+);
+
+// Floating Contact Button Component
+const FloatingContactButton = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const phoneNumber = "+91 861 840 8028";
+  const phoneNumberClean = "918618408028";
+  const whatsappMessage = encodeURIComponent("Hi, I'm interested in genetic testing services from MyGenePortal");
+
+  return (
+    <div style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 1000 }}>
+      {/* Popup with contact options */}
+      {isOpen && (
+        <div style={{
+          position: 'absolute',
+          bottom: '70px',
+          right: '0',
+          background: 'white',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+          padding: '1rem',
+          minWidth: '220px',
+          animation: 'fadeIn 0.2s ease'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+            <span style={{ fontWeight: '600', color: '#1a365d' }}>Contact Us</span>
+            <button 
+              onClick={() => setIsOpen(false)}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px' }}
+            >
+              <CloseIcon />
+            </button>
+          </div>
+          
+          <div style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1rem' }}>
+            {phoneNumber}
+          </div>
+          
+          {/* Call Button */}
+          <a
+            href={`tel:${phoneNumberClean}`}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.75rem 1rem',
+              background: '#1a365d',
+              color: 'white',
+              borderRadius: '0.5rem',
+              textDecoration: 'none',
+              fontWeight: '500',
+              marginBottom: '0.5rem',
+              justifyContent: 'center'
+            }}
+          >
+            <PhoneIcon />
+            Call Now
+          </a>
+          
+          {/* WhatsApp Button */}
+          <a
+            href={`https://wa.me/${phoneNumberClean}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.75rem 1rem',
+              background: '#25D366',
+              color: 'white',
+              borderRadius: '0.5rem',
+              textDecoration: 'none',
+              fontWeight: '500',
+              justifyContent: 'center'
+            }}
+          >
+            <WhatsAppIcon />
+            WhatsApp
+          </a>
+        </div>
+      )}
+      
+      {/* Main floating button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="whatsapp-float"
+        aria-label="Contact Us"
+        data-testid="whatsapp-float-button"
+        style={{
+          border: 'none',
+          cursor: 'pointer',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#25D366',
+          color: 'white',
+          boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)'
+        }}
+      >
+        <WhatsAppIcon />
+      </button>
+    </div>
+  );
+};
+
+function App() {
   return (
     <CartProvider>
       <BrowserRouter>
@@ -51,17 +167,8 @@ function App() {
           </Routes>
           <Footer />
           
-          {/* WhatsApp Floating Button - Essential for Indian Market */}
-          <a
-            href={whatsappLink}
-            className="whatsapp-float"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp"
-            data-testid="whatsapp-float-button"
-          >
-            <WhatsAppIcon />
-          </a>
+          {/* Floating Contact Button */}
+          <FloatingContactButton />
           
           <Toaster />
         </div>
