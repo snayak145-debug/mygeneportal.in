@@ -29,7 +29,7 @@ function App() {
   // WhatsApp link with properly encoded message
   const whatsappNumber = "918618408028";
   const whatsappMessage = encodeURIComponent("Hi, I'm interested in genetic testing services from MyGenePortal");
-  const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <CartProvider>
