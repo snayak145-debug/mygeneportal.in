@@ -59,8 +59,8 @@ export const TestCatalog = () => {
     setEnquiryModalOpen(true);
   };
 
-  const categories = ['All', 'Clinical Genomics', 'Preventive Genomics'];
-  const subCategories = ['All', 'Oncology', 'Neurology', 'Prenatal', 'Cardiology', 'Reproductive', 'Wellness', 'Nutrition'];
+  const categories = ['All', 'Clinical Genomics', 'Preventive Genomics', 'Routine Tests', 'Health Packages'];
+  const subCategories = ['All', 'Oncology', 'Neurology', 'Prenatal', 'Cardiology', 'Reproductive', 'Wellness', 'Nutrition', 'Blood Work', 'Hormones', 'Organ Function', 'Diabetes', 'Vitamins', 'Infection', 'Inflammation', 'Basic', 'Premium', 'Specialized', 'Comprehensive'];
 
   const filteredTests = tests.filter((test) => {
     const matchesSearch = test.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
