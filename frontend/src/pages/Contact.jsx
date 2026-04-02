@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from '../components/ui/accordion';
 import { Mail, MapPin, Send } from 'lucide-react';
-import { faqs, partnerLabs } from '../mockData';
+import { faqs } from '../mockData';
 import { useToast } from '../hooks/use-toast';
 import { EnquiryModal } from '../components/EnquiryModal';
 import '../styles/genomics.css';
@@ -218,27 +218,6 @@ export const Contact = () => {
                   Monday - Saturday: 9:00 AM - 6:00 PM<br />
                   Sunday: Closed
                 </p>
-              </div>
-
-              {/* Partner Labs */}
-              <div style={{
-                background: 'white',
-                borderRadius: '1rem',
-                padding: '2rem',
-                border: '1px solid var(--border-color)'
-              }}>
-                <h3 className="heading-3" style={{ marginBottom: '1rem' }}>Our Partner Labs</h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                  We exclusively partner with NABL & CAP accredited labs across India:
-                </p>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {partnerLabs.map((lab) => (
-                    <li key={lab.id} style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                      <strong style={{ color: 'var(--text-primary)' }}>{lab.name}</strong><br />
-                      {lab.accreditation} • {lab.location}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
