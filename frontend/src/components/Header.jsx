@@ -37,17 +37,46 @@ export const Header = () => {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        {/* Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none' }}>
-          <img 
-            src="https://customer-assets.emergentagent.com/job_e3fc99b8-330b-4f00-a6ae-9010e2661f37/artifacts/094nxkqw_image.png" 
-            alt="MyGenePortal Logo" 
-            style={{ 
-              height: '50px', 
-              width: 'auto',
-              filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
-            }}
-          />
+        {/* Logo with DNA Icon */}
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+          {/* DNA Helix SVG Icon */}
+          <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#D4AF37"/>
+                <stop offset="100%" stopColor="#E8D5B7"/>
+              </linearGradient>
+            </defs>
+            {/* DNA Double Helix */}
+            <path d="M25 10 Q50 25, 75 10 Q50 25, 25 40 Q50 55, 75 40 Q50 55, 25 70 Q50 85, 75 70 Q50 85, 25 90" 
+                  stroke="url(#dnaGradient)" strokeWidth="4" fill="none" strokeLinecap="round"/>
+            <path d="M75 10 Q50 25, 25 10 Q50 25, 75 40 Q50 55, 25 40 Q50 55, 75 70 Q50 85, 25 70 Q50 85, 75 90" 
+                  stroke="url(#dnaGradient)" strokeWidth="4" fill="none" strokeLinecap="round"/>
+            {/* Horizontal lines connecting strands */}
+            <line x1="30" y1="25" x2="70" y2="25" stroke="#D4AF37" strokeWidth="2" opacity="0.6"/>
+            <line x1="30" y1="50" x2="70" y2="50" stroke="#D4AF37" strokeWidth="2" opacity="0.6"/>
+            <line x1="30" y1="75" x2="70" y2="75" stroke="#D4AF37" strokeWidth="2" opacity="0.6"/>
+          </svg>
+          {/* Company Name */}
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
+            <span style={{ 
+              fontSize: '1.4rem', 
+              fontWeight: '700', 
+              color: '#FFFFFF',
+              letterSpacing: '0.5px'
+            }}>
+              MyGene<span style={{ color: '#D4AF37' }}>Portal</span>
+            </span>
+            <span style={{ 
+              fontSize: '0.65rem', 
+              color: 'rgba(212, 175, 55, 0.8)', 
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              fontWeight: '500'
+            }}>
+              Precision Genomics
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
