@@ -52,7 +52,7 @@ export const Footer = () => {
             borderRadius: '0.75rem',
             border: '2px solid rgba(255, 255, 255, 0.2)'
           }}>
-            <ShieldCheck size={32} color="#00D4FF" />
+            <ShieldCheck size={32} color="#81B29A" />
             <div>
               <div style={{ fontWeight: '700', fontSize: '0.875rem', color: 'white' }}>
                 NABL & CAP ACCREDITED
