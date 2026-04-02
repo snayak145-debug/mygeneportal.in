@@ -1,0 +1,141 @@
+{
+  "project_context": {
+    "app_type": "healthcare_ecommerce",
+    "domain": "Genomics Testing (Clinical & Preventive)",
+    "market": "Indian market (requires trust, professional, culturally relevant)",
+    "target_audience": "Patients, pregnant women, families, health-conscious individuals"
+  },
+  "color_themes": [
+    {
+      "theme_name": "Theme 1: Vitality & Precision (Recommended)",
+      "description": "Combines deep authority for clinical precision with earthy warmth for preventive wellness.",
+      "variables": {
+        "--primary-clinical": "220 49% 20%",
+        "--primary-preventive": "13 69% 62%",
+        "--secondary-accent": "27 87% 67%",
+        "--background": "60 11% 97%",
+        "--surface": "0 0% 100%",
+        "--text-main": "216 8% 12%",
+        "--text-muted": "215 14% 34%"
+      },
+      "hex_values": {
+        "primary_clinical": "#1A2B4C",
+        "primary_preventive": "#E07A5F",
+        "secondary_accent": "#F4A261",
+        "background": "#F9F9F7",
+        "text_main": "#1C1E21"
+      },
+      "application": "Use Deep Indigo (#1A2B4C) for Clinical sections (Test Catalog, diagnostics). Use Terracotta/Coral (#E07A5F) for Preventive sections (Wellness packages). Soft Gold (#F4A261) for primary CTA buttons. Background is Alabaster (#F9F9F7)."
+    },
+    {
+      "theme_name": "Theme 2: Holistic Harmony",
+      "description": "Nature-inspired growth and healing, replacing sterile medical vibes with a sense of flourishing.",
+      "variables": {
+        "--primary-clinical": "148 27% 23%",
+        "--primary-preventive": "2 42% 62%",
+        "--secondary-accent": "32 63% 62%",
+        "--background": "40 33% 98%",
+        "--surface": "0 0% 100%",
+        "--text-main": "25 8% 16%",
+        "--text-muted": "24 10% 35%"
+      },
+      "hex_values": {
+        "primary_clinical": "#2C4C3B",
+        "primary_preventive": "#C87976",
+        "secondary_accent": "#DDA15E",
+        "background": "#FDFBF7",
+        "text_main": "#2B2825"
+      },
+      "application": "Use Forest Pine (#2C4C3B) for the Clinical test catalog and Track Sample. Earthy Muted Rose (#C87976) for prenatal/family preventive packages. Ochre (#DDA15E) for icons and badges."
+    },
+    {
+      "theme_name": "Theme 3: Premium Future Care",
+      "description": "A regal and sophisticated approach targeting high-end diagnostic care and elite wellness.",
+      "variables": {
+        "--primary-clinical": "295 28% 23%",
+        "--primary-preventive": "151 28% 60%",
+        "--secondary-accent": "35 29% 82%",
+        "--background": "200 16% 97%",
+        "--surface": "0 0% 100%",
+        "--text-main": "225 59% 11%",
+        "--text-muted": "220 20% 40%"
+      },
+      "hex_values": {
+        "primary_clinical": "#4A2B4D",
+        "primary_preventive": "#81B29A",
+        "secondary_accent": "#E0D4C3",
+        "background": "#F6F8F9",
+        "text_main": "#0B132B"
+      },
+      "application": "Use Rich Plum/Aubergine (#4A2B4D) for clinical gravitas. Soft Sage (#81B29A) for the calming preventive path. Champagne (#E0D4C3) for secondary CTAs and surface cards."
+    }
+  ],
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Manrope",
+    "hierarchy": "Headings use tracking-tight to create tension. Body uses leading-relaxed. Small labels (tracking-[0.2em] uppercase)."
+  },
+  "colors": {
+    "description": "Refer to color_themes above for specific palettes. Use Theme 1 (Vitality & Precision) as the default implementation.",
+    "hover_states": "Hover states must be explicitly defined (e.g., hover:bg-clinical-dark hover:text-white). Focus states must have high contrast."
+  },
+  "visual enhancers": {
+    "shadows": "Ambient + direct layered shadows. Soft, diffuse for clinical cards. No transparent overlays without backdrop-blur.",
+    "surfaces": "Glassmorphism for sticky navigation (backdrop-blur-xl bg-white/70 border-b border-black/5). Solid backgrounds for content."
+  },
+  "component name": {
+    "Buttons": "Pill-shaped or rounded-lg with clear hover animations. Specific clinical vs preventive variants.",
+    "Cards": "Subtle border (border-black/5), flat white background, soft shadow on hover (-translate-y-1 shadow-lg)."
+  },
+  "grids": {
+    "spacing": "Generous. Use p-8 to p-12 for section paddings. Gap-8 to gap-12 for grid layouts.",
+    "layout": "Bento Grid style for Dashboard/Track Sample. Swiss Grid style for Marketing/Landing."
+  },
+  "layouts": {
+    "mobile_first": true,
+    "max_image_height": "max-h-[80vh] md:max-h-none",
+    "alignment": "Optical alignment over geometric. Left-align dense text. Center-align only heroes if balanced."
+  },
+  "motion": {
+    "interactions": "Hover transitions on cards, buttons. Ensure transitions don't break transforms.",
+    "accessibility": "Respect prefers-reduced-motion."
+  },
+  "accessibility": {
+    "contrast": "Minimum 4.5:1 for standard text. 3:1 for large text.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='add-to-cart-btn')."
+  },
+  "media": {
+    "guidelines": "Images must preserve subject and context. No arbitrary cropping."
+  },
+  "3d libraries": {
+    "recommendation": "Use Framer Motion for 2.5D scroll effects or minor card flips. Do not over-engineer with heavy 3D unless strictly required for a DNA visualization (where React Three Fiber could be used)."
+  },
+  "image urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1631556760585-2e846196d5a9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwyfHxtZWRpY2FsJTIwbGFib3JhdG9yeSUyMHNjaWVudGlzdHxlbnwwfHx8fDE3NzUxNDk0ODF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "a woman looking through a microscope in a lab",
+      "category": "Clinical Background / Scientist"
+    },
+    {
+      "url": "https://images.pexels.com/photos/9574448/pexels-photo-9574448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "A scientist in protective gear holds a tray of test tubes in a modern laboratory setting.",
+      "category": "Test Catalog / Laboratory"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1659352787906-f809a3b9e86e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmYW1pbHklMjB3ZWxsbmVzc3xlbnwwfHx8fDE3NzUxNDk0ODF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "a group of people posing for a photo (Indian family)",
+      "category": "Preventive Packages / Family Wellness"
+    },
+    {
+      "url": "https://images.pexels.com/photos/9345685/pexels-photo-9345685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Family enjoying leisure time with drawing and laptop amidst Indian decor.",
+      "category": "Home Lifestyle / Proactive Health"
+    }
+  ],
+  "component_path": {
+    "ui_components": "/app/frontend/src/components/ui"
+  },
+  "instructions_to_main_agent": "Implement the 'Theme 1: Vitality & Precision' color palette. Use .js/.jsx extensions for all React components. Use Tailwind CSS with custom hsl variables in tailwind.config.js to set up primary-clinical, primary-preventive, and background colors. Differentiate the UI visually: Clinical Test pages should have darker, authoritative headers with Deep Indigo. Preventive packages should use lighter, airier backgrounds with terracotta accents.",
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight. Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients. Don't make generic centered layouts. Create depth through layered design elements with z-index hierarchy. Use glass-morphism effects with backdrop filters (12-24px blur). You MUST NOT apply universal transition. Eg: transition: all. You MUST NOT center align the app container. Every interaction needs micro-animations. Use 2-3x more spacing. Main agent relies on these image URLs. Missing categories = main agent will use placeholder text which is FORBIDDEN. Components MUST use named exports. Pages MUST use default exports. All interactive elements MUST include data-testid. DO NOT use complete transparent background in headers/dropdowns. ONLY use .jsx/.js files (NOT .tsx).",
+  "GENERAL UI UX DESIGN GUIDELINES": "1. Mobile-First Approach. 2. Clear Visual Hierarchy. 3. Explicit states for hover/focus/active. 4. Reduce cognitive load with progressive disclosure. 5. High contrast for medical/clinical data. 6. Distinct separation between Clinical (diagnostic, serious) and Preventive (lifestyle, proactive) via color and spacing. 7. Optical alignment for icons and text. 8. Generous white space."
+}
