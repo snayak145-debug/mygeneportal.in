@@ -176,23 +176,45 @@ export const About = () => {
       <section className="section section-gray">
         <div className="container">
           <div style={{
-            background: 'linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%)',
+            background: '#0A1628',
             borderRadius: '1.5rem',
             padding: '4rem 2rem',
             textAlign: 'center',
-            color: 'white'
+            color: 'white',
+            border: '2px solid rgba(212, 175, 55, 0.3)'
           }}>
             <h2 className="heading-1" style={{ color: 'white', marginBottom: '1rem' }}>
               Ready to Start Your Genetic Health Journey?
             </h2>
-            <p className="body-large" style={{ maxWidth: '800px', margin: '0 auto 2rem' }}>
+            <p className="body-large" style={{ maxWidth: '800px', margin: '0 auto 2rem', color: 'rgba(255, 255, 255, 0.9)' }}>
               Book a free pre-test counseling session with our Certified Board Genetic Counsellors to discuss your genetic testing options and health goals.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-              <Link to="/booking" className="btn-primary" onClick={scrollToTop}>
+              <Link to="/booking" style={{
+                background: '#D4AF37',
+                color: '#0A1628',
+                padding: '1rem 2rem',
+                borderRadius: '0.5rem',
+                fontWeight: '600',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }} onClick={scrollToTop}>
                 Book Free Counseling
               </Link>
-              <Link to="/tests" className="btn-secondary" onClick={scrollToTop}>
+              <Link to="/tests" style={{
+                background: 'transparent',
+                color: '#D4AF37',
+                padding: '1rem 2rem',
+                borderRadius: '0.5rem',
+                fontWeight: '600',
+                textDecoration: 'none',
+                border: '2px solid #D4AF37',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }} onClick={scrollToTop}>
                 Browse Tests
               </Link>
             </div>
